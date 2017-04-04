@@ -101,14 +101,11 @@ namespace GildedRose.Console
                 {
                     item.Quality = item.Quality - 4;
                 }
-                else if (item.SellIn > 0)
+                else if (item.SellIn => 0)
                 {
                     item.Quality = item.Quality - 2;
                 }
-                else if (item.SellIn == 0)
-                {
-                    item.Quality = item.Quality - 1;
-                }
+                
             }
             else if (item.Quality > 0)
             {
