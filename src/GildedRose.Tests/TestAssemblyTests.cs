@@ -169,7 +169,7 @@ namespace GildedRose.Tests
                 Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 1, Quality = 3 } }
             };
             program.UpdateQuality();
-            Assert.Equal(2, program.Items[0].Quality);
+            Assert.Equal(1, program.Items[0].Quality);
         }
 
         [Fact]
@@ -181,6 +181,17 @@ namespace GildedRose.Tests
             };
             program.UpdateQuality();
             Assert.Equal(-1, program.Items[0].Quality);
+        }
+
+        [Fact]
+        public void TestConjuredItemsWithZeroSellInDecreaseTwiceAsFast()
+        {
+            var program = new Program
+            {
+                Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 1, Quality = 3 } }
+            };
+            program.UpdateQuality();
+            Assert.Equal(1, program.Items[0].Quality);
         }
     }
 

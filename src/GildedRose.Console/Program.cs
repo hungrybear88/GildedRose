@@ -63,7 +63,7 @@ namespace GildedRose.Console
                 {
                     item.Quality = item.Quality + 1;
                 }
-               
+
                 item.Quality = item.Quality > 50 ? 50 : item.Quality;
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
@@ -71,15 +71,15 @@ namespace GildedRose.Console
 
                 item.SellIn = item.SellIn - 1;
 
-                if (item.SellIn < 5 )
+                if (item.SellIn < 5)
                 {
                     item.Quality = item.Quality + 3;
                 }
-                else if (item.SellIn < 10 )
+                else if (item.SellIn < 10)
                 {
                     item.Quality = item.Quality + 2;
                 }
-                else 
+                else
                 {
                     item.Quality = item.Quality + 1;
                 }
@@ -94,18 +94,20 @@ namespace GildedRose.Console
             }
             else if (item.Name == "Conjured Mana Cake")
             {
-                
-                 item.SellIn = item.SellIn - 1;
 
-                if (item.SellIn < 0)
+                item.SellIn = item.SellIn - 1;
+
+                
+                 if (item.SellIn < 0)
                 {
                     item.Quality = item.Quality - 4;
                 }
-                else if (item.SellIn => 0)
+               else if (item.SellIn >= 0)
                 {
                     item.Quality = item.Quality - 2;
                 }
-                
+
+
             }
             else if (item.Quality > 0)
             {
@@ -120,7 +122,7 @@ namespace GildedRose.Console
                     item.Quality = item.Quality - 1;
                 }
             }
-            
+
         }
 
     }
